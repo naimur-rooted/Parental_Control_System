@@ -1,0 +1,28 @@
+# Render Blueprint specification for "Time's Up Parental Control" full-stack app
+services:
+  - type: web
+    name: times-up-backend
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      # Optional: Uncomment if you want to use a real external MySQL database
+      # - key: MYSQL_HOST
+      #   sync: false
+      # - key: MYSQL_USER
+      #   sync: false
+      # - key: MYSQL_PASSWORD
+      #   sync: false
+      # - key: MYSQL_DATABASE
+      #   sync: false
+      # - key: MYSQL_PORT
+      #   value: 3306

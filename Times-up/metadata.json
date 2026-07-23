@@ -1,0 +1,6 @@
+{
+  "name": "Time's Up",
+  "description": "Complete self-hosted parental control system with real-time tracking, application controls, message logging, and policy rules.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

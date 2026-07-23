@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="device_admin_description">Enables "Time\'s Up" to manage device security, locking, and preventing unauthorized uninstallation.</string>
+    <string name="accessibility_description">Enables "Time\'s Up" to monitor web browsing and protect you by blocking restricted apps.</string>
+</resources>

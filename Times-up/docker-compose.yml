@@ -1,0 +1,49 @@
+# Docker Compose for Time's Up - Parental Control System
+version: '3.8'
+
+services:
+  # MySQL 8 Database Service
+  mysql_db:
+    image: mysql:8.0
+    container_name: timesup_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: times_up
+      MYSQL_ROOT_PASSWORD: root_password_9988
+      MYSQL_USER: parent_admin
+      MYSQL_PASSWORD: secure_mysql_password_123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 5
+
+  # Time's Up Full-Stack Application
+  app:
+    build: .
+    container_name: timesup_app
+    restart: always
+    depends_on:
+      mysql_db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_HOST=mysql_db
+      - DB_USER=parent_admin
+      - DB_PASSWORD=secure_mysql_password_123
+      - DB_NAME=times_up
+      - JWT_SECRET=local_docker_compose_secret_9988
+      - ENCRYPTION_KEY=local_aes_encryption_key_32_bytes_long_def
+      - APP_URL=http://localhost:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+volumes:
+  mysql_data:
