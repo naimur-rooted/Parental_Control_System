@@ -2,6 +2,9 @@
 
 Family Guardian is a transparent parental-supervision companion app built with Flutter. It is designed to sync a child's device status, location, and usage patterns with a central parental dashboard.
 
+> [!IMPORTANT]
+> **Development Status**: This app is currently in **active development**. Some features may be unstable, and data reported (such as screen time or location accuracy) may not always be 100% accurate.
+
 ## 🚀 Features
 
 - **📍 Real-time Location**: Syncs device GPS coordinates to the parent dashboard.
@@ -67,6 +70,15 @@ Due to the nature of parental control, this app requires several high-level perm
 - `lib/services/`: Core logic for API, Location, Sync, and Background tasks.
 - `lib/screens/`: UI for Dashboard, Pairing, and the Lock Overlay.
 - `android/`: Native Kotlin implementation for Accessibility Service and Device Admin.
+
+## 🔮 Future Implementations
+
+- **📸 Screenshot Capture**: Periodic remote screenshots for visual safety checks.
+- **🎙️ Ambient Audio Monitoring**: Remote audio check-ins in emergency situations.
+- **🛡️ Enhanced Web Filtering**: Deep packet inspection for blocking specific categories of web content.
+- **📱 iOS Support**: Implementation of Apple's Screen Time API (Family Controls).
+- **🔋 Intelligent Power Saving**: Adaptive sync intervals to preserve child device battery life.
+- **📈 Advanced Analytics**: AI-driven insights into usage patterns and potential risks.
 
 ## ⚠️ Disclaimer
 
